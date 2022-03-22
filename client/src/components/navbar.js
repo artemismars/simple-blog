@@ -12,11 +12,6 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import styled from "@emotion/styled";
 import { purple } from "@mui/material/colors";
 
-import(
-  "https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
-);
-import("https://fonts.googleapis.com/css2?family=Hurricane&display=swap");
-
 const NavBar = ({ theme, colorMode }) => {
   const GetStartedButton = styled(Button)(({ theme }) => ({
     color:
