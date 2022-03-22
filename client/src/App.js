@@ -1,9 +1,16 @@
 import "./App.css";
-// import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./components/signup";
+import Main from "./pages/Main";
 
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import { Box, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  useMediaQuery,
+} from "@mui/material";
 import React from "react";
 import NavBar from "./components/navbar";
 
@@ -29,10 +36,20 @@ function App() {
     >
       <Box sx={{ gridArea: "header" }}>
         <NavBar theme={theme} colorMode={colorMode} />
+        <Card>
+          <CardHeader>Portfolio Blog App</CardHeader>
+          <CardContent>
+            <h1>Explore the world</h1>
+          </CardContent>
+        </Card>
       </Box>
-      <Box sx={{ gridArea: "main" }}>
-        <Signup />
-      </Box>
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </Router>
     </Box>
   );
 }
